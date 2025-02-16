@@ -123,7 +123,7 @@ const Members = () => {
 
         {/* 3. Member list card */}
         <div className={`
-          w-full h-full grid grid-cols-1 gap-16
+          w-full h-[calc(100vh-465px)] min-h-36
         `}>
 
           {/* C. Item list */}
@@ -192,10 +192,7 @@ const Members = () => {
             {/* Member list */}
             <div className={`
               xl:no-scrollbar
-              w-full
-              ${(currentAcc.isOwner === true) ? 
-                "h-[calc(100vh-560px)]" :
-                "h-[calc(100vh-490px)]"}
+              w-full h-full
               overflow-y-scroll
             `}>
               {members.map((e) => { return<>

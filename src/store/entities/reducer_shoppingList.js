@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 const initalStateObject = {
+    isSaved: true,
     selectedItem: {
         id: "",
         name: '',
@@ -57,9 +58,13 @@ const slice = createSlice({
             // store updated item
             state.selectedItem = item
             state.items[index] = tempItem
+
+            state.isSaved = false
         },
         changeItems: (state, action) => {
             state.items = action.payload.items
+
+            state.isSaved = false
         },
 
         changeSelectedItemById: (state, action) => {
@@ -100,6 +105,8 @@ const slice = createSlice({
             state.settings.filter = {...state.settings.filter, "0": true}
             state.items.push({...newItemObj})
             state.selectedItem = {...newItemObj}
+
+            state.isSaved = false
         },
         changeAddItemIsAfter: (state, action) => {
             // get update index with id of selected item
@@ -136,6 +143,8 @@ const slice = createSlice({
             state.settings.filter = {...state.settings.filter, "0": true}
             state.items = [...newItemList]
             state.selectedItem = {...newItemObj}
+
+            state.isSaved = false
         },
         changeItemRemove: (state, action) => {
             const index = state.items.findIndex((e) => {return e.id === action.payload.id})
@@ -147,6 +156,8 @@ const slice = createSlice({
                     name: "",
                     isOwner: false
                 }
+
+                state.isSaved = false
             }
         },
 
@@ -155,9 +166,13 @@ const slice = createSlice({
         changeMember: (state, action) => {
             const index = state.items.findIndex((e) => {return e.id === action.payload.id})
             state.members[index] = action.payload.member
+
+            state.isSaved = false
         },
         changeMembers: (state, action) => {
             state.members = action.payload.members
+
+            state.isSaved = false
         },
 
         changeSelectedMemberById: (state, action) => {
@@ -188,6 +203,8 @@ const slice = createSlice({
 
             state.members.push({...newMemberObj})
             state.selectedMember = {...newMemberObj}
+
+            state.isSaved = false
         },
         changeAddMemberIsAfter: (state, action) => {
             // get update index with id of selected item
@@ -219,6 +236,8 @@ const slice = createSlice({
             // store new item list
             state.members = [...newMemberList]
             state.selectedMember = {...newMemberObj}
+
+            state.isSaved = false
         },
         changeMemberRemove: (state, action) => {
 
@@ -231,6 +250,8 @@ const slice = createSlice({
                     name: "",
                     isOwner: false
                 }
+
+                state.isSaved = false
             }
         },
 
@@ -301,9 +322,13 @@ const slice = createSlice({
 
         changeListName: (state, action) => {
             state.settings.name = action.payload.name
+
+            state.isSaved = false
         },
         changeListDsc: (state, action) => {
             state.settings.dsc = action.payload.dsc
+
+            state.isSaved = false
         },
 
 
@@ -342,6 +367,8 @@ const slice = createSlice({
                     5: true,
                 }
             }
+
+            state.isSaved = false
         },
         changeListSettingsToDefault: (state, action) => {
             state.settings = {
@@ -359,13 +386,20 @@ const slice = createSlice({
                     5: true,
                 }
             }
+
+            state.isSaved = false
         },
         changeListLoad: (state, action) => {
             state.items = action.payload.items
             state.members = action.payload.members
             state.settings = action.payload.settings
-        }
+
+            state.isSaved = true
+        },
         
+        changeListToSaved: (state, action) => {
+            state.isSaved = true
+        }
 
     }
 })
@@ -406,7 +440,8 @@ export const {
     // Other
     changeListToDefault,
     changeListSettingsToDefault,
-    changeListLoad
+    changeListLoad,
+    changeListToSaved
 
 } = slice.actions;
 

@@ -128,8 +128,9 @@ const Detail = () => {
 
         {/* 3. Detail */}
         <div className={`
-          w-full h-full
-          flex flex-col
+          w-full h-[calc(100vh-465px)] min-h-36
+          rounded-3xl
+          flex flex-col overflow-scroll
         `}>
 
           {/* A. Name + Dsc */}

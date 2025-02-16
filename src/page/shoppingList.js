@@ -156,14 +156,19 @@ function changeItemState(newState) {
 
         {/* 3. Cards */}
         <div className={`
-          w-full h-full
+          w-full h-[calc(100vh-465px)] 
           xl:grid
           xl:grid-cols-2
           xl:gap-16
+          rounded-3xl overflow-scroll
         `}>
           {/* A. Item list */}
           <div className={`
-            w-full xl:h-full h-[calc((100vh-364px)/2-96px)] p-4 xl:mb-0 mb-8
+            w-full xl:h-full p-4 xl:mb-0 mb-8
+            xl:h-[calc(100vh-465px)]
+            h-[calc((100vh-465px)/2)]
+            xl:min-h-[830px]
+            min-h-48 
             bg-neutral-700 rounded-3xl
             shadow-xl shadow-neutral-950/25
             flex flex-col
@@ -288,7 +293,11 @@ function changeItemState(newState) {
 
           {/* B. Selected item */}
           <div className={`
-            w-full xl:h-full h-[calc((100vh-364px)/2)] p-4
+            w-full xl:h-full p-4
+            xl:h-[calc(100vh-465px)]
+            h-[calc((100vh-465px)/2)]
+            xl:min-h-[830px]
+            min-h-[460px]
             bg-neutral-700 rounded-3xl
             shadow-xl shadow-neutral-950/25
             flex flex-col
@@ -465,7 +474,7 @@ function changeItemState(newState) {
                 onClick={() => changeItemState(e[0])}
                 className={`
                   w-full h-full max-h-12 px-2
-                  flex items-center
+                  flex items-center relative
                 `}>
                   {/* 1. Selection dot */}
                   <div className={`
@@ -579,25 +588,25 @@ function changeItemState(newState) {
                 onClick={() => changeItemState(e[0])}
                 className={`
                   w-full h-full px-2
-                  flex flex-col items-center
+                  flex flex-col items-center relative
                 `}>
 
                   {/* 1. State icons */}
                   <div className={`
-                    w-20 h-8
+                    sm:w-20 w-10 h-8
                     realtive flex
                   `}>
                     {(
                       currentItem.state !== Number(e[0]) ||
                       currentItem.id.length === 0
                     ) &&
-                    <div className='absolute z-20 w-20 h-8 bg-neutral-700/35'/>}
-                    <div className='absolute z-10 w-20 h-8'>
+                    <div className='absolute z-20 sm:w-20 w-10 h-8 bg-neutral-700/35'/>}
+                    <div className='absolute z-10 sm:w-20 w-10 h-8'>
                       <StateButton id={Number(e[0])}/>
                     </div>
                     {currentItem.state === Number(e[0]) &&
                     currentItem.id.length !== 0 &&
-                    <div className='absolute z-0 w-20 h-8 blur-md'>
+                    <div className='absolute z-0 sm:w-20 w-10 h-8 blur-md'>
                       <StateButton id={Number(e[0])}/>
                     </div>}
                   </div>
@@ -609,6 +618,7 @@ function changeItemState(newState) {
                       currentItem.id.length !== 0) ?
                       "text-neutral-200" :
                       "text-neutral-500"}
+                    sm:text-base text-sm text-nowrap
                   `}>
                     {e[1]}
                   </div>
