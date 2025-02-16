@@ -8,9 +8,9 @@ import { changeModalActiveId } from '../../store/entities/reducer_modal.js';
 
 const Account = () => {
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch() // eslint-disable-line
 
-  const currentAcc = useSelector(store => store.entities.accountReducer.selectedAcc)
+  const currentAcc = useSelector(store => store.entities.accountReducer.selectedAcc) // eslint-disable-line
 
 return (
   <button

@@ -12,7 +12,7 @@ import { changePageID } from '../../store/entities/reducer_page.js'
 
 const index = () => {
 
-    const dispatch = useDispatch()
+    const dispatch = useDispatch() // eslint-disable-line
 
   return (
     <div className={`

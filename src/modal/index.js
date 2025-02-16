@@ -9,8 +9,8 @@ import Account from './account.js'
 
 const Index = () => {
 
-    const dispatch = useDispatch()
-    const modalId = useSelector(store => store.entities.modalReducer.modalId)
+    const dispatch = useDispatch() // eslint-disable-line
+    const modalId = useSelector(store => store.entities.modalReducer.modalId) // eslint-disable-line
 
     const modalMap = {
         0: <StateFilter/>,

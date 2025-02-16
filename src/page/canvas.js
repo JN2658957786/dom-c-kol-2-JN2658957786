@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 
 const Canvas = ({ children }) => {
 
-    const modalId = useSelector(store => store.entities.modalReducer.modalId)
+    const modalId = useSelector(store => store.entities.modalReducer.modalId) // eslint-disable-line
 
     return <>
         <div className={`

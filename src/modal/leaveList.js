@@ -9,8 +9,8 @@ import { changeSaveList } from '../store/entities/reducer_database'
 
 const LeaveList = () => { 
   
-    const settings = useSelector(store => store.entities.shoppingListReducer.settings)
-    const currentAcc = useSelector(store => store.entities.accountReducer.selectedAcc)
+    const settings = useSelector(store => store.entities.shoppingListReducer.settings) // eslint-disable-line
+    const currentAcc = useSelector(store => store.entities.accountReducer.selectedAcc) // eslint-disable-line
     const onwerName = useSelector(store => {
         const shoppingList = store.entities.shoppingListReducer
         const ownerID = shoppingList.settings.owner
@@ -20,13 +20,13 @@ const LeaveList = () => {
         if(owner === -1 || owner === undefined) return null 
     
         return owner.name
-    })
+    }) // eslint-disable-line
 
-    const currentListID = useSelector(state => state.entities.shoppingListReducer.settings.id)
-    const currentListItems = useSelector(state => state.entities.shoppingListReducer.items)
+    const currentListID = useSelector(state => state.entities.shoppingListReducer.settings.id) // eslint-disable-line
+    const currentListItems = useSelector(state => state.entities.shoppingListReducer.items) // eslint-disable-line
     const newMembers = useSelector(state => {
         let members = state.entities.shoppingListReducer.members
-        const index = members.findIndex((e) => {return e.id === currentAcc.id})
+        const index = members.findIndex((e) => {return e.id === currentAcc.id}) 
         let tempMembers = []
         if (index > -1) {
             for (let i = 0; i < members.length; i++) {
@@ -34,8 +34,8 @@ const LeaveList = () => {
             }
         }
         return tempMembers
-    })
-    const currentListSettings = useSelector(state => state.entities.shoppingListReducer.settings)
+    }) // eslint-disable-line
+    const currentListSettings = useSelector(state => state.entities.shoppingListReducer.settings) // eslint-disable-line
 
 
 

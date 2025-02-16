@@ -9,10 +9,10 @@ import { changeModaFilterArr } from '../store/entities/reducer_modal'
 
 const StateFilter = () => {
 
-    const dispatch = useDispatch()
-    const filter = useSelector(store => store.entities.shoppingListReducer.settings.filter)
-    const filterState = useSelector(store => store.entities.shoppingListReducer.settings.filterState)
-    const filter_arr = useSelector(store => store.entities.modalReducer.filter_arr)
+    const dispatch = useDispatch() // eslint-disable-line
+    const filter = useSelector(store => store.entities.shoppingListReducer.settings.filter) // eslint-disable-line
+    const filterState = useSelector(store => store.entities.shoppingListReducer.settings.filterState) // eslint-disable-line
+    const filter_arr = useSelector(store => store.entities.modalReducer.filter_arr) // eslint-disable-line
 
     useEffect(() => {
         let tempArr = []

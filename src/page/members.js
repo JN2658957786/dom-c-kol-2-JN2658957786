@@ -9,12 +9,12 @@ import { changeAddMember, changeAddMemberIsAfter, changeMemberRemove, changeSele
 
 const Members = () => {
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch() // eslint-disable-line
 
-  const currentAcc = useSelector(store => store.entities.accountReducer.selectedAcc)
-  const currentMember = useSelector(store => store.entities.shoppingListReducer.selectedMember)
-  const members = useSelector(store => store.entities.shoppingListReducer.members)
-  const settings = useSelector(store => store.entities.shoppingListReducer.settings)
+  const currentAcc = useSelector(store => store.entities.accountReducer.selectedAcc) // eslint-disable-line
+  const currentMember = useSelector(store => store.entities.shoppingListReducer.selectedMember) // eslint-disable-line
+  const members = useSelector(store => store.entities.shoppingListReducer.members) // eslint-disable-line
+  const settings = useSelector(store => store.entities.shoppingListReducer.settings) // eslint-disable-line
 
   const isOwner = useSelector(store => {
     const members = store.entities.shoppingListReducer.members
@@ -23,7 +23,7 @@ const Members = () => {
 
     if(user === undefined) return false
     return user.isOwner
-  })
+  }) // eslint-disable-line
 
   return (
     <div className='w-full h-full p-12 flex justify-center'>

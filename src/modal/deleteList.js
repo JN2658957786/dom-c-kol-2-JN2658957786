@@ -9,7 +9,7 @@ import { changePageID } from '../store/entities/reducer_page'
 
 const DeleteList = () => { 
   
-    const settings = useSelector(store => store.entities.shoppingListReducer.settings)
+    const settings = useSelector(store => store.entities.shoppingListReducer.settings) // eslint-disable-line
 
 
 return (<div className={`

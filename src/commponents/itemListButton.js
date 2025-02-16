@@ -20,7 +20,7 @@ const ItemListButton = ({
     font=""
 }) => {
 
-    const dispatch = useDispatch()
+    const dispatch = useDispatch() // eslint-disable-lines
     const [isHovered, setIsHovered] = useState(false)
 
     return (

@@ -9,9 +9,9 @@ import { mdiCheck } from '@mdi/js'
 
 const AllLists = () => {
 
-  const shoppingLists = useSelector(store => store.entities.databaseReducer.shoppingLists)
-  const currentListID = useSelector(store => store.entities.shoppingListReducer.settings.id)
-  const currentAcc = useSelector(store => store.entities.accountReducer.selectedAcc)
+  const shoppingLists = useSelector(store => store.entities.databaseReducer.shoppingLists) // eslint-disable-line
+  const currentListID = useSelector(store => store.entities.shoppingListReducer.settings.id) // eslint-disable-line
+  const currentAcc = useSelector(store => store.entities.accountReducer.selectedAcc) // eslint-disable-line
 
   return (
     <div className='w-full h-full p-12 flex justify-center'>

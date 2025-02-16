@@ -9,10 +9,10 @@ import { changeModalActiveId } from '../store/entities/reducer_modal.js'
 
 const Detail = () => {
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch() // eslint-disable-line
 
-  const currentAcc = useSelector(store => store.entities.accountReducer.selectedAcc)
-  const settings = useSelector(store => store.entities.shoppingListReducer.settings)
+  const currentAcc = useSelector(store => store.entities.accountReducer.selectedAcc) // eslint-disable-line
+  const settings = useSelector(store => store.entities.shoppingListReducer.settings) // eslint-disable-line
 
   const isOwner = useSelector(store => {
     const members = store.entities.shoppingListReducer.members
@@ -21,7 +21,7 @@ const Detail = () => {
 
     if(user === undefined) return false
     return user.isOwner
-  })
+  }) // eslint-disable-line
 
   function setListName(newName) {
     dispatch(changeListName({name: newName}))

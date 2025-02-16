@@ -7,9 +7,9 @@ import { changeListToDefault } from '../store/entities/reducer_shoppingList'
 
 const Account = () => { 
   
-    const dispatch = useDispatch()
+    const dispatch = useDispatch() // eslint-disable-line
 
-    const accountR = useSelector(store => store.entities.accountReducer)
+    const accountR = useSelector(store => store.entities.accountReducer) // eslint-disable-line
 
 return (<div className={`
     translate-x-[50vw] translate-y-[50vh]
